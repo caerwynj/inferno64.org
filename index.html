@@ -56,6 +56,7 @@
             border-collapse: collapse;
             width: 100%;
             margin-top: 10px;
+            margin-bottom: 20px;
         }
         th, td {
             border: 1px solid #000;
@@ -72,8 +73,11 @@
 
     <div class="nav">
         <a href="#about">[ About ]</a>
+        <a href="#status">[ Status ]</a>
+        <a href="#features">[ Core Features ]</a>
         <a href="#differences">[ Inferno vs. Inferno64 ]</a>
         <a href="#grid">[ The Compute Grid ]</a>
+        <a href="#agent">[ AI Sandboxing ]</a>
         <a href="https://github.com/caerwynj/inferno64">[ GitHub ]</a>
     </div>
 
@@ -84,8 +88,21 @@
 
     <h2 id="about">What is Inferno64?</h2>
     <p>
-        Inferno64 is a modern evolution of the classic distributed operating system. It provides a seamless, peer-to-peer compute grid designed to run on everything from modern desktops to reclaimed ARM-based hardware. By networking together discarded phones, old laptops, and idle processors, Inferno64 creates a decentralized execution environment for distributed workloads and local AI hosting.
+        Inferno64 is a modern evolution of the classic distributed operating system. It provides a seamless, peer-to-peer compute grid designed to run on everything from modern desktops to reclaimed hardware. By networking together discarded phones, old laptops, and idle processors, Inferno64 creates a decentralized execution environment for distributed workloads and local AI hosting.
     </p>
+
+    <h2 id="status">Project Status: Active Development</h2>
+    <p>
+        <strong>Notice:</strong> Inferno64 is an ongoing, highly aspirational research and development project. While core components like the Dis VM and basic networking are operational, features like the WASM-to-Dis bridge, the Owen labor exchange, and the Claw AI agent are in active, heavy development. Expect sharp edges, frequent core dumps, and rapid architectural shifts. Contributors and fellow silicon recyclers are welcome.
+    </p>
+
+    <h2 id="features">Core Features</h2>
+    <ul>
+        <li><strong>LLM Fileserver:</strong> A native Styx/9P fileserver that interfaces directly with <code>llama.cpp</code>, allowing grid nodes to read and write to large language models as if they were standard text files.</li>
+        <li><strong>Built-in SQLite:</strong> Lightweight, reliable database functionality integrated seamlessly into the core environment without external dependencies.</li>
+        <li><strong>Modernized Cryptography & Compression:</strong> Updated algorithms ensuring secure, fast, and efficient peer-to-peer communication across the cluster.</li>
+        <li><strong>Revamped Audio:</strong> Updated Linux audio subsystem featuring deep integration with PulseAudio for high-fidelity sound management.</li>
+    </ul>
 
     <h2 id="differences">How it Differs from Original Inferno OS</h2>
     <p>
@@ -101,12 +118,12 @@
         <tr>
             <td><strong>Target Architecture</strong></td>
             <td>x86, ARM (Early), MIPS</td>
-            <td>Modern ARM64, Windows 11, macOS, Android/Termux</td>
+            <td>Modern ARM64, AMD64, Windows 11, macOS, Android/Termux</td>
         </tr>
         <tr>
             <td><strong>Execution Engine</strong></td>
             <td>Classic Dis VM</td>
-            <td>Dis VM with a highly optimized <strong>AMD64 and ARM64 JIT Compiler</strong></td>
+            <td>Dis VM with highly optimized <strong>AMD64 and ARM64 JIT Compilers</strong></td>
         </tr>
         <tr>
             <td><strong>Modern Workloads</strong></td>
@@ -122,7 +139,20 @@
 
     <h2 id="grid">The Silicon Recycling Manifesto</h2>
     <p>
-        Millions of capable ARM cores sit idle in drawers across the globe. Inferno64 utilizes a peer-to-peer compute model via tokens to harness this wasted potential. A 2013 MacBook Air, a reclaimed Lenovo Ideacentre, and an old Android phone can be bound together using the Styx protocol into a single, cohesive computing fabric. 
+        Millions of capable processors sit idle in drawers across the globe. Inferno64 utilizes a peer-to-peer compute model to harness this wasted potential. A 2013 MacBook Air, a reclaimed Lenovo Ideacentre, and an old Android phone can be bound together using the Styx protocol into a single, cohesive computing fabric. 
+    </p>
+    
+    <p>
+        <strong>The Owen Labor Exchange:</strong> At the heart of the cluster lies the Owen labor exchange, serving as the dedicated control plane. Owen intelligently manages resource discovery across the network, schedules distributed workloads, and facilitates the token-based compute economy. Whether it is routing WASM payloads or distributing LLM inference tasks, the Owen exchange ensures processes are allocated to the most capable idle nodes efficiently.
+    </p>
+
+    <h2 id="agent">Sandboxed AI Agent & Claw</h2>
+    <p>
+        Leveraging the native LLM fileservers, Inferno64 hosts a built-in AI coding agents capable of interacting directly with the distributed OS. Further automation is possible with a personal Claw: an autonomous AI agent framework designed to run on personal hardware and execute tasks across a user's digital life. It allows the agent to smoothly traverse filesystems, operate command-line tools, and orchestrate complex operations across the compute grid.
+    </p>
+
+    <p>
+        Security and containment are handled natively through Inferno's fundamental architecture. Because every process in Inferno constructs its own configurable namespace, the AI agent operates within a strictly defined reality. By simply omitting directories, network interfaces, or sensitive files from the agent's unique namespace, it remains perfectly sandboxed. It can only see, touch, and use the exact resources it has been explicitly granted.
     </p>
     
     <p>
