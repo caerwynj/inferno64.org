@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inferno64 - Distributed Compute Grid</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: "Times New Roman", Times, serif;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+            line-height: 1.4;
+        }
+        h1, h2, h3 {
+            font-family: "Courier New", Courier, monospace;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+        img.screenshot {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #000;
+            image-rendering: pixelated;
+        }
+        .nav {
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            color: #0000ee;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+        .nav a:visited {
+            color: #551a8b;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .code-block {
+            background-color: #e0e0e0;
+            padding: 10px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+            border: 1px solid #999;
+        }
+        ul {
+            list-style-type: square;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 5px 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0e0e0;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="#about">[ About ]</a>
+        <a href="#differences">[ Inferno vs. Inferno64 ]</a>
+        <a href="#grid">[ The Compute Grid ]</a>
+        <a href="https://github.com/caerwynj/inferno64">[ GitHub ]</a>
+    </div>
+
+    <h1>Inferno64: The Reclaimed Compute Grid</h1>
+
+    <img src="2026-02-22-180434_1024x800_scrot.png" alt="Inferno64 Desktop Environment" class="screenshot">
+    <p><em>Fig 1. The Inferno64 graphical environment (wm) managing concurrent processes across the grid.</em></p>
+
+    <h2 id="about">What is Inferno64?</h2>
+    <p>
+        Inferno64 is a modern evolution of the classic distributed operating system. It provides a seamless, peer-to-peer compute grid designed to run on everything from modern desktops to reclaimed ARM-based hardware. By networking together discarded phones, old laptops, and idle processors, Inferno64 creates a decentralized execution environment for distributed workloads and local AI hosting.
+    </p>
+
+    <h2 id="differences">How it Differs from Original Inferno OS</h2>
+    <p>
+        While rooted in the elegant design of the original system, Inferno64 introduces critical modernization for today's hardware landscape:
+    </p>
+    
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Original Inferno OS</th>
+            <th>Inferno64</th>
+        </tr>
+        <tr>
+            <td><strong>Target Architecture</strong></td>
+            <td>x86, ARM (Early), MIPS</td>
+            <td>Modern ARM64, Windows 11, macOS, Android/Termux</td>
+        </tr>
+        <tr>
+            <td><strong>Execution Engine</strong></td>
+            <td>Classic Dis VM</td>
+            <td>Dis VM with a highly optimized <strong>AMD64 and ARM64 JIT Compiler</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Modern Workloads</strong></td>
+            <td>Limbo native applications</td>
+            <td><strong>WASM-to-Dis Bridge:</strong> Compiles WebAssembly directly to Dis, allowing modern web payloads to run on the retro grid.</td>
+        </tr>
+        <tr>
+            <td><strong>Tooling Ecosystem</strong></td>
+            <td>Standard `acme` / shell tools</td>
+            <td>Includes a modern Limbo package manager and a dedicated CLI debugger.</td>
+        </tr>
+    </table>
+
+    <h2 id="grid">The Silicon Recycling Manifesto</h2>
+    <p>
+        Millions of capable ARM cores sit idle in drawers across the globe. Inferno64 utilizes a peer-to-peer compute model via tokens to harness this wasted potential. A 2013 MacBook Air, a reclaimed Lenovo Ideacentre, and an old Android phone can be bound together using the Styx protocol into a single, cohesive computing fabric. 
+    </p>
+    
+    <p>
+        To join the grid, pull the repository and build the host environment:
+    </p>
+
+    <div class="code-block">
+        $ git clone https://github.com/caerwynj/inferno64.git<br>
+        $ cd inferno64<br>
+        $ ./makemk.sh<br>
+        $ mk install
+    </div>
+
+    <hr>
+    <p><small>&copy; 2026 Caerwyn B. Jones. Built for the distributed future.</small></p>
+
+</body>
+</html>
