@@ -93,7 +93,7 @@
 
     <h2 id="status">Project Status: Active Development</h2>
     <p>
-        <strong>Notice:</strong> Inferno64 is an ongoing, highly aspirational research and development project. While core components like the Dis VM and basic networking are operational, features like the WASM-to-Dis bridge, the Owen labor exchange, and the Claw AI agent are in active, heavy development. Expect sharp edges, frequent core dumps, and rapid architectural shifts. Contributors and fellow silicon recyclers are welcome.
+        <strong>Notice:</strong> Inferno64 is an ongoing, highly aspirational research and development project. While core components like the Dis VM and basic networking are operational, features like the Llama.cpp fileserver, the Owen labor exchange, and the AMD64/ARM64 JIT are in active, heavy development. Expect sharp edges, frequent core dumps, and rapid architectural shifts. Contributors and fellow silicon recyclers are welcome.
     </p>
 
     <h2 id="features">Core Features</h2>
@@ -101,7 +101,7 @@
         <li><strong>LLM Fileserver:</strong> A native Styx/9P fileserver that interfaces directly with <code>llama.cpp</code>, allowing grid nodes to read and write to large language models as if they were standard text files.</li>
         <li><strong>Built-in SQLite:</strong> Lightweight, reliable database functionality integrated seamlessly into the core environment without external dependencies.</li>
         <li><strong>Modernized Cryptography & Compression:</strong> Updated algorithms ensuring secure, fast, and efficient peer-to-peer communication across the cluster.</li>
-        <li><strong>Revamped Audio:</strong> Updated Linux audio subsystem featuring deep integration with PulseAudio for high-fidelity sound management.</li>
+        <li><strong>Revamped Audio and Draw devices:</strong> Updated Linux audio subsystem featuring deep integration with PulseAudio for high-fidelity sound management. A new Wayland client and compositor.</li>
     </ul>
 
     <h2 id="differences">How it Differs from Original Inferno OS</h2>
@@ -126,14 +126,9 @@
             <td>Dis VM with highly optimized <strong>AMD64 and ARM64 JIT Compilers</strong></td>
         </tr>
         <tr>
-            <td><strong>Modern Workloads</strong></td>
-            <td>Limbo native applications</td>
-            <td><strong>WASM-to-Dis Bridge:</strong> Compiles WebAssembly directly to Dis, allowing modern web payloads to run on the retro grid.</td>
-        </tr>
-        <tr>
             <td><strong>Tooling Ecosystem</strong></td>
             <td>Standard `acme` / shell tools</td>
-            <td>Includes a modern Limbo package manager and a dedicated CLI debugger.</td>
+            <td>Includes a modern Limbo package manager, and a dedicated CLI debugger and tools for making limbo more legible to AI agents.</td>
         </tr>
     </table>
 
@@ -161,13 +156,16 @@
 
     <div class="code-block">
         $ git clone https://github.com/caerwynj/inferno64.git<br>
+	$ export ROOT=$PWD/inferno64
+	$ export objtype=amd64
+	$ export PATH=$PATH:$ROOT/Linux/$objtype/bin
         $ cd inferno64<br>
         $ ./makemk.sh<br>
         $ mk install
     </div>
 
     <hr>
-    <p><small>&copy; 2026 Caerwyn B. Jones. Built for the distributed future.</small></p>
+    <p><small>&copy; 2026 Caerwyn Jones.</small></p>
 
 </body>
 </html>
